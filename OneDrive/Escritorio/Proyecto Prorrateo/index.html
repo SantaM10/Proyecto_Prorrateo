@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tabla de Prorrateo</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    $(function() {
+      $("#fechaCorregir").datepicker();
+      $("#fechaOS").datepicker();
+      $("#fechaLecturaAnterior").datepicker();
+    });
+
+    function calcularResultado() {
+      var lecturaOS = parseFloat(document.getElementById("lecturaOS").value);
+      var lecturaAnt = parseFloat(document.getElementById("lecturaAnt").value);
+      var lecturaCorregir = parseFloat(document.getElementById("lecturaCorregir").value);
+
+      var resultado = (lecturaCorregir - lecturaAnt) / (lecturaOS - lecturaAnt);
+
+      document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+    }
+  </script>
+</head>
+<body>
+
+<h1>Tabla de Prorrateo</h1>
+
+<form>
+  <label for="fechaCorregir">Fecha a Corregir:</label>
+  <input type="text" id="fechaCorregir" name="fechaCorregir"><br><br>
+
+  <label for="fechaOS">Fecha OS:</label>
+  <input type="text" id="fechaOS" name="fechaOS"><br><br>
+
+  <label for="lecturaOS">Lectura OS:</label>
+  <input type="number" id="lecturaOS" name="lecturaOS"><br><br>
+
+  <label for="fechaLecturaAnterior">Fecha Lectura Anterior:</label>
+  <input type="text" id="fechaLecturaAnterior" name="fechaLecturaAnterior"><br><br>
+
+  <label for="lecturaAnt">Lectura Anterior:</label>
+  <input type="number" id="lecturaAnt" name="lecturaAnt"><br><br>
+
+  <label for="lecturaCorregir">Lectura a Corregir:</label>
+  <input type="number" id="lecturaCorregir" name="lecturaCorregir"><br><br>
+
+  <label for="OS">O/S:</label>
+  <input type="text" id="OS" name="OS"><br><br>
+
+  <input type="button" value="Calcular Resultado" onclick="calcularResultado()">
+</form>
+
+<p id="resultado"></p>
+
+</body>
+</html>

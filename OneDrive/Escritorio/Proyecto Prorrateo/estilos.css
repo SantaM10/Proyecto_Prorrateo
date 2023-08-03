@@ -1,0 +1,43 @@
+/* Estilos para el formulario y sus elementos */
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Ajusta el ancho máximo del formulario según tu preferencia */
+  margin: 0 auto; /* Centra el formulario horizontalmente en la página */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="button"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="button"] {
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+
+input[type="button"]:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para el resultado */
+#resultado {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+}
